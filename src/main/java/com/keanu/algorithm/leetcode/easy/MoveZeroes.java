@@ -2,6 +2,9 @@ package com.keanu.algorithm.leetcode.easy;
 
 import java.util.Arrays;
 
+/**
+ * 283 - easy
+ */
 public class MoveZeroes {
 
     public static void moveZeroes(int[] nums) {
