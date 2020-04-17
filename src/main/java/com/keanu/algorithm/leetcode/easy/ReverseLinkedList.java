@@ -8,15 +8,15 @@ import com.keanu.algorithm.leetcode.easy.entity.ListNode;
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         if (head == null) return head;
-        ListNode tmp, res;
-        res = new ListNode(head.val);
-        head = head.next;
-        while (head != null) {
-            tmp = new ListNode(head.val);
-            tmp.next = res;
-            res = tmp;
-            head = head.next;
+        ListNode current = head.next;
+        head.next = null;
+        ListNode next;
+        while (current != null) {
+            next = current.next;
+            current.next = head;
+            head = current;
+            current = next;
         }
-        return res;
+        return head;
     }
 }
