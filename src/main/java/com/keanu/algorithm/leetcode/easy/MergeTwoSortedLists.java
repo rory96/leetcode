@@ -1,5 +1,7 @@
 package com.keanu.algorithm.leetcode.easy;
 
+import com.keanu.algorithm.leetcode.easy.entity.ListNode;
+
 /**
  * 21 - easy - merge two sorted lists
  */
@@ -28,11 +30,5 @@ public class MergeTwoSortedLists {
             tmp = tmp.next;
         }
         return res.next;
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
     }
 }
