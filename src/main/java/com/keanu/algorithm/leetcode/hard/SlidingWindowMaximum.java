@@ -9,18 +9,17 @@ import java.util.Deque;
  */
 public class SlidingWindowMaximum {
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        int max = Integer.MIN_VALUE;
         ArrayDeque<Integer> queue = new ArrayDeque<>(k);
         int[] res = new int[nums.length - k + 1];
         int j = 0;
-        for (int i = 0; i < nums.length; i++) {
-            queue.offerLast(nums[i]);
-            if (queue.size() < k) {
-                max = Math.max(max, nums[i]);
-                continue;
+        for (int value : nums) {
+            queue.offerLast(value);
+            if (queue.size() < k) continue;
+            int max = Integer.MIN_VALUE;
+            for (int num : queue) {
+                max = Math.max(max, num);
             }
-            queue.forEach(num -> {});
-            max = Math.max(max, nums[i]);
+            queue.pollFirst();
             res[j++] = max;
         }
         return res;
