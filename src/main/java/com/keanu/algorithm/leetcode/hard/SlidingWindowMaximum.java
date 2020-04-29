@@ -3,6 +3,7 @@ package com.keanu.algorithm.leetcode.hard;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.Iterator;
 
 /**
  * 239 - hard - 滑动窗口的最大值
@@ -27,7 +28,9 @@ public class SlidingWindowMaximum {
 
     public static void main(String[] args) {
         int[] nums = new int[] {1,3,-1,-3,5,3,6,7};
+//        int[] nums1 = new int[] {1,-1};
         int k = 3;
+//        int k = 1;
         int[] res = maxSlidingWindow(nums, k);
         System.out.println(Arrays.toString(res));
     }
